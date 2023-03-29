@@ -1,0 +1,96 @@
+#!/bin/bash
+#Function's Shell - FunShell
+#give a fuction to control you program
+#====================
+#site: github/phennyxz
+#by: Araújo, Wasley G. <wasleyzulu@gmail.com>
+#====================
+#license: GPL
+#
+function fs_err {
+	echo "$( date +%D-%T ) [$USER] <$0> Process Erro $$; exit code: $1." >&2
+	exit $1;
+}
+
+function fs_passwd {
+	declare -A vs_opt=(\
+		[default]="echo problemas"\
+		[start]=":"\
+		[shot]="--help --verbose --version --silence --caracter --hash --typed --simbol"\
+		[--help]="echo essa função recebe uma senha"\
+		[--version]="echo essa é a versão 2.0"\
+		[--verbose]="echo ainda não implementado"\
+		[--silence]="nao mostra os caracteres"\
+		[--caracter]="nao mostra os caracteres"\
+		[--hash]="nao mostra os caracteres"\
+		[--type]="nao mostra os caracteres"\
+		[--salt]="nao mostra os caracteres"\
+		[--simbol]="X"\
+	)
+
+	function rum {
+		tput sc
+		while read -sN1 typed;do
+			case $typed in
+				[^[:cntrl:]])
+					stored=$stored$typed;;
+				$'\n')
+					break;;
+				$'\b')
+					s=$((${#stored}-1));
+					stored=${stored:0:${s/-1/0}};;
+				$'\e')
+					read -sn1 -t 0.1;
+					read -sn1 -t 0.1;;
+			esac
+			tput rc
+			echo ${stored//?/X}
+		done
+
+		echo "$stored"
+	}
+
+	fs_main $@
+}
+
+#função principal para lidar com os parametros passado para o programa.
+function fs_main {
+
+	# criar opções curtas para os parametros longos ja configurados.
+		for vs_f1 in ${vs_opt[shot]//join}; do
+			vs_f2="${vs_f1:1:2}"
+
+			: ${vs_opt[$vs_f2]:+ ${vs_opt[${vs_f2^^}]:=${vs_opt[$vs_f1]}}} ${vs_opt[$vs_f2]:=${vs_opt[$vs_f1]}}
+
+		done
+
+	#verifica os parametros
+	while [[ -n "$1" ]]; do
+
+		if [[ -n ${vs_opt[$1]} ]]; then
+			${vs_opt[$1]} $@ || fs_err $? ${vs_err[$1]:-"$0: $$ error desconhecido"}
+	
+		elif [[ ${vs_opt[shot]:+-} == ${1:0:1} && ${#1} -gt 2 && ${1:1:1} != '-' ]]; then
+			vs_par=( $(sed 's/./ -&/g' <<< ${1//-}) )
+			shift $vs_jump;
+
+			for vs_f1 in ${!vs_par[@]}; do
+				vs_f2=${vs_par[$vs_f1]/-:}
+				${vs_f2:+ continue}
+				vs_par[${vs_f1}]="$1"
+				shift 1;
+
+			done
+			set ' ' "${vs_par[@]}" "$@"
+
+		else
+			${vs_opt[default]} $@||fs_err $? ${vs_err[default]:-"$0: $$ error desconhecido" }
+
+		fi
+		shift ${vs_jump:-1};
+		${vs_jump:+ unset vs_jump}	
+
+	done
+	${vs_opt[start]:- : fim} || fs_err $? ${vs_err[start]:-"$0: $$ error desconhecido"}
+
+}
