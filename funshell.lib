@@ -1,0 +1,70 @@
+#!/bin/bash
+#Function's Shell - FunShell
+#give a fuction to control you program
+#====================
+#site: github/phennyxz
+#by: Araújo, Wasley G. <wasleyzulu@gmail.com>
+#====================
+#license: GPL
+
+#Slogan: Take the Fun, make it Shell—get funshell!
+
+#fs_main functio, orquestra, controla fuxo pela opções de entrada
+source fs_main.sh
+
+#fs_err. trata erros
+source fs_err.sh
+
+#fs_log. gera logs
+source fs_log.sh
+
+#fs_shot. trata opções curtas na array de opções
+source fs_shorts.sh
+
+#fs_uncommand. controla o uso de comando permitidos ou negados dentro de variaveis
+source fs_uncommand.sh
+
+#fs_sanit. limpa caracteres restitos de variaveis
+source fs_sanit.sh
+
+#fs_need. trata as dependecias do codigo
+source fs_need.sh
+
+#fs_trap. ajuda a gerenciar capturas de sinais
+souce fs_trap.sh
+
+#fs_check. trata as configuraçõe do ambiente
+#source fs_check.sh
+
+#fs_rsc. trata de rescurso alocados
+#fs_rsc
+
+#fs_file. gerencia arquivos...
+#fs_file
+
+#fs_pass. gerencia aquisição de senhas
+#fs_pass
+
+#fs_form. monta formularios....
+#fs_form
+
+#fs_cor. formata a cor de saida do terminal...
+#fs_cor
+
+#fs_async. criar funcçoes assyncronas...
+#fs_async
+
+#fs_screen. formata a tel
+#fs_screen
+
+#fs_box. criar caixas no terminal
+#fs_box
+
+#fs_mouse. habilita o uso de mouse no script ??
+#fs_mouse
+
+#fs_db. gerencia interação com banco de dados proprio ???
+#fs_db
+
+#fs_tiemof. agenda um execução parelela para daqui a x milisegundos.
+#fs_timeof
