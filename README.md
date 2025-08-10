@@ -13,7 +13,7 @@ Desenvolvido para o Bash 4+, o Funshell promove um estilo de programação mais 
 🚀 Uso Rápido
 Aqui está um exemplo de como sua aplicação pode ser 
 estruturada com a funshell:
- {
+```
 
 #!/bin/bash
 #Exemplo de uso da funshell
@@ -59,7 +59,7 @@ function start_service {
 
 fs_main "$@"
 
- }
+ ```
 
 📂 Estrutura do Projeto
  * fs_*.sh: Módulos principais de orquestração (e.g., fs_main, fs_err, fs_log).
