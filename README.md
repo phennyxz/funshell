@@ -1,5 +1,5 @@
-Funshell: A Biblioteca de Orquestração para Shell Scripts Modernos
-Slogan: Take the Fun, make it Shell—get funshell!
+# Funshell: A Biblioteca de Orquestração para Shell Scripts Modernos
+## Slogan: Take the Fun, make it Shell—get funshell!
 🎯 O que é o Funshell?
 O Funshell é uma biblioteca de funções em shell script projetada para transformar scripts simples em aplicações de linha de comando robustas, seguras e modulares. Em vez de reescrever lógica complexa em cada projeto, o Funshell oferece um conjunto de ferramentas otimizadas para gerenciar tarefas críticas, permitindo que você se concentre na funcionalidade do seu programa.
 Desenvolvido para o Bash 4+, o Funshell promove um estilo de programação mais funcional e declarativo, simplificando a orquestração e elevando a qualidade do seu código.
@@ -13,14 +13,14 @@ Desenvolvido para o Bash 4+, o Funshell promove um estilo de programação mais 
 🚀 Uso Rápido
 Aqui está um exemplo de como sua aplicação pode ser 
 estruturada com a funshell:
-'''#!/bin/bash
-# Exemplo de uso da funshell
+#!/bin/bash
+#Exemplo de uso da funshell
 
-# Inclui o main da biblioteca
+#Inclui o main da biblioteca
 source funshell.sh
 
-# Configura as opções do seu programa
-# A funshell irá interpretar e rotear as ações
+#Configura as opções do seu programa
+#A funshell irá interpretar e rotear as ações
 declare -gA vs_opt=(
     [default]='help 1'
     [--help|h]='msg help'
@@ -28,7 +28,7 @@ declare -gA vs_opt=(
     [--start|s]='start_service'
 )
 
-# Define uma ação para a opção 'install'
+#Define uma ação para a opção 'install'
 function install {
     # O fs_need verifica e instala dependências de forma inteligente
     fs_need --cmd 'git' --vrs '2.1.0'
@@ -36,13 +36,13 @@ function install {
     echo "Dependências verificadas e instaladas."
 }
 
-# Define uma ação para a opção 'start_service'
+#Define uma ação para a opção 'start_service'
 function start_service {
     echo "Iniciando o serviço..."
-    # Lógica de inicialização do serviço aqui
+    #Lógica de inicialização do serviço aqui
 }
 
-# Inicia a orquestração do programa
+#Inicia a orquestração do programa
 fs_main "$@"'''
 
 📂 Estrutura do Projeto
