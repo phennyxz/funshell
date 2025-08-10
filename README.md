@@ -1,5 +1,5 @@
-#Funshell: A Biblioteca de Orquestração para Shell Scripts Modernos
-##Slogan: Take the Fun, make it Shell—get funshell!
+Funshell: A Biblioteca de Orquestração para Shell Scripts Modernos
+Slogan: Take the Fun, make it Shell—get funshell!
 🎯 O que é o Funshell?
 O Funshell é uma biblioteca de funções em shell script projetada para transformar scripts simples em aplicações de linha de comando robustas, seguras e modulares. Em vez de reescrever lógica complexa em cada projeto, o Funshell oferece um conjunto de ferramentas otimizadas para gerenciar tarefas críticas, permitindo que você se concentre na funcionalidade do seu programa.
 Desenvolvido para o Bash 4+, o Funshell promove um estilo de programação mais funcional e declarativo, simplificando a orquestração e elevando a qualidade do seu código.
@@ -12,7 +12,7 @@ Desenvolvido para o Bash 4+, o Funshell promove um estilo de programação mais 
  * Performance Otimizada: Utiliza recursos avançados do Bash, como expansões de variáveis e arrays associativos, para minimizar o overhead e evitar o uso excessivo de chamadas a processos externos.
 🚀 Uso Rápido
 Aqui está um exemplo de como sua aplicação pode ser estruturada com a funshell:
-'''#!/bin/bash
+#!/bin/bash
 # Exemplo de uso da funshell
 
 # Inclui o main da biblioteca
@@ -42,7 +42,7 @@ function start_service {
 }
 
 # Inicia a orquestração do programa
-fs_main "$@"'''
+fs_main "$@"
 
 📂 Estrutura do Projeto
  * fs_*.sh: Módulos principais de orquestração (e.g., fs_main, fs_err, fs_log).
