@@ -11,8 +11,9 @@ Desenvolvido para o Bash 4+, o Funshell promove um estilo de programação mais 
  * Gerenciamento de Dependências: O fs_need verifica e gerencia as dependências do seu script, garantindo que o ambiente de execução esteja sempre preparado.
  * Performance Otimizada: Utiliza recursos avançados do Bash, como expansões de variáveis e arrays associativos, para minimizar o overhead e evitar o uso excessivo de chamadas a processos externos.
 🚀 Uso Rápido
-Aqui está um exemplo de como sua aplicação pode ser estruturada com a funshell:
-#!/bin/bash
+Aqui está um exemplo de como sua aplicação pode ser 
+estruturada com a funshell:
+'''#!/bin/bash
 # Exemplo de uso da funshell
 
 # Inclui o main da biblioteca
@@ -42,7 +43,7 @@ function start_service {
 }
 
 # Inicia a orquestração do programa
-fs_main "$@"
+fs_main "$@"'''
 
 📂 Estrutura do Projeto
  * fs_*.sh: Módulos principais de orquestração (e.g., fs_main, fs_err, fs_log).
