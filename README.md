@@ -13,14 +13,19 @@ Desenvolvido para o Bash 4+, o Funshell promove um estilo de programação mais 
 🚀 Uso Rápido
 Aqui está um exemplo de como sua aplicação pode ser 
 estruturada com a funshell:
+
 #!/bin/bash
+
 #Exemplo de uso da funshell
 
 #Inclui o main da biblioteca
+
 source funshell.sh
 
 #Configura as opções do seu programa
+
 #A funshell irá interpretar e rotear as ações
+
 declare -gA vs_opt=(
     [default]='help 1'
     [--help|h]='msg help'
@@ -29,21 +34,32 @@ declare -gA vs_opt=(
 )
 
 #Define uma ação para a opção 'install'
+
 function install {
+
     # O fs_need verifica e instala dependências de forma inteligente
+
     fs_need --cmd 'git' --vrs '2.1.0'
+
     fs_need --cmd 'docker' --insta 'docker-ce'
+
     echo "Dependências verificadas e instaladas."
+
 }
 
 #Define uma ação para a opção 'start_service'
+
 function start_service {
+
     echo "Iniciando o serviço..."
+
     #Lógica de inicialização do serviço aqui
+
 }
 
 #Inicia a orquestração do programa
-fs_main "$@"'''
+
+fs_main "$@"
 
 📂 Estrutura do Projeto
  * fs_*.sh: Módulos principais de orquestração (e.g., fs_main, fs_err, fs_log).
